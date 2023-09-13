@@ -2,6 +2,7 @@ $(document).ready(function(){
     var carta1 = ""; var carta2 = "";
     var par= false;
     var total_pares = 0; 
+    var total_fallas =0;
     $('img').click(function(e){
         var estado = $(this).attr('data-estado')
         var nombre_imagen = $(this).attr('data-id')
@@ -47,7 +48,10 @@ $(document).ready(function(){
             $("#total_pares").html(total_pares)
             carta1 = ""
             carta2 = ""
-        }    
+            
+        } else{
+            total_fallas++
+        }  
     }
     
 
@@ -55,10 +59,28 @@ $(document).ready(function(){
         alert("ganaste")
         //reiniciando la pagina setInterval("location.reload()");
         $('img').each(function (){
-
+            $(this).attr('src','imagen/fondo.jpg')
+            $(this).attr('data-estado', '0')
         })
 
         total_pares=0
+        total_fallas=0
+        par=false
+        carta1=""
+        carta2=""
+        return;
+    }
+    if(total_fallas >=5){
+        alert("has alcansado el limite de intentos")
+        alert("perdiste")
+        //reiniciando la pagina setInterval("location.reload()");
+        $('img').each(function (){
+            $(this).attr('src','imagen/fondo.jpg')
+            $(this).attr('data-estado', '0')
+        })
+
+        total_pares=0
+        total_fallas=0
         par=false
         carta1=""
         carta2=""
