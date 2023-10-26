@@ -21,7 +21,12 @@
     </footer>
 
     <div class="container">
-
+    <div class="row">
+            <div class="col-12">
+                <h2>Bienvenido al sistema de gestion de alumnos</h2>
+                <img src="imagenes/logo.png" width="128px">
+            </div>
+        </div>
     </div>
     <script src=""></script>
 </body>
