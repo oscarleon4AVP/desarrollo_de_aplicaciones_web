@@ -77,6 +77,6 @@
         CETIS 107 &copy; 2023
     </footer>
 
-    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
 </body>
 </html>
